@@ -10,7 +10,6 @@
   </head>
 
   <body>
-
     <nav class="navbar navbar-expand-lg navbar-light bg-light">
       <a class="navbar-brand" href="#">Time Bucket</a>
       <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
@@ -47,5 +46,24 @@
     <p class="alert"><%= alert %></p>
 
     <%= yield %>
+
+    <footer class="footer">
+      <div class="container">
+        <div class="row">
+          <div class="col-sm-3">
+            <a href="#">About</a>
+          </div>
+          <div class="col-sm-3">
+            <a href="#">Contact</a>
+          </div>
+          <div class="col-sm-3">
+            <a href="#">FAQ</a>
+          </div>
+          <div class="col-sm-3">
+            <p>&copy; Natalia Barańska, <%= Time.current.year %></p>
+          </div>
+        </div>
+      </div>
+    </footer>
   </body>
 </html>
