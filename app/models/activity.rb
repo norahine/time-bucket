@@ -1,4 +1,4 @@
 class Activity < ApplicationRecord
-  # TODO: add validation, that limits the scope to current_user
   belongs_to :user
+  validates :name, presence: true, uniqueness: { scope: :user_id }
 end
