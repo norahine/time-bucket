@@ -62,7 +62,7 @@ $colors: map-merge((
   "gray-dark":  $gray-800
 ), $colors);
 
-$primary:       $blue !default;
+$primary:       $teal !default;
 $secondary:     $gray-600 !default;
 $success:       $green !default;
 $info:          $cyan !default;
@@ -94,18 +94,18 @@ $yiq-contrasted-threshold: 150 !default;
 $yiq-text-dark: $gray-900 !default;
 $yiq-text-light: $white !default;
 
-// Options
-//
-// Quickly modify global styling by enabling or disabling optional features.
+// // Options
+// //
+// // Quickly modify global styling by enabling or disabling optional features.
 
-$enable-caret:              true !default;
-$enable-rounded:            true !default;
-$enable-shadows:            false !default;
-$enable-gradients:          false !default;
-$enable-transitions:        true !default;
-$enable-hover-media-query:  false !default; // Deprecated, no longer affects any compiled CSS
-$enable-grid-classes:       true !default;
-$enable-print-styles:       true !default;
+// $enable-caret:              true !default;
+// $enable-rounded:            true !default;
+// $enable-shadows:            false !default;
+// $enable-gradients:          false !default;
+// $enable-transitions:        true !default;
+// $enable-hover-media-query:  false !default; // Deprecated, no longer affects any compiled CSS
+// $enable-grid-classes:       true !default;
+// $enable-print-styles:       true !default;
 
 
 // // Spacing

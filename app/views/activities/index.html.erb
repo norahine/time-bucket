@@ -1,15 +1,24 @@
 <div class="container">
   <div class="row">
-    <div class="col-sm-4 offset-sm-4">
+    <div class="col-md-3 col-centered">
       <h1>Your activities</h1>
 
       <% if current_user.activities.present? %>
-        <ul>
+        <ul class="list-unstyled">
           <% @activities.each do |activity| %>
             <li>
-              <%= activity.name %>
-              <%= link_to "Edit", edit_activity_path(activity), class: "btn btn-primary" %>
-              <%= link_to "Delete", activity_path(activity), method: :delete, data: { confirm: "Are sure you want to delete this activity?" }, class: "btn btn-primary" %>
+              <div class="row">
+                <div class="col-md-6">
+                  <%= activity.name %>
+                </div>
+                <div class="col-md-1">
+                  <%= link_to "<i class=\"far fa-edit\"></i>".html_safe, edit_activity_path(activity) %>
+                </div>
+                <div class="col-md-1">
+                  <%= link_to "<i class=\"far fa-trash-alt\"></i>".html_safe, activity_path(activity),
+                      method: :delete, data: { confirm: "Are sure you want to delete this activity?" } %>
+                </div>
+              </div>
             </li>
           <% end %>
         </ul>
@@ -18,11 +27,14 @@
       <% end %>
 
       <%= form_for @activity do |f| %>
-        <div class="field">
-          <%= f.text_field :name, class: "" %>
+        <div class="row">
+          <div class="col-md-8">
+            <%= f.text_field :name, class: "" %>
+          </div>
+          <div class="col-md-4">
+            <%= f.submit "Add", class: "" %>
+          </div>
         </div>
-
-        <%= f.submit "Add", class: "btn btn-primary" %>
       <% end %>
     </div>
   </div>
