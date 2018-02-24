@@ -15,7 +15,7 @@ class ActivitiesController < ApplicationController
       redirect_to activities_path, flash: { succes: "Activity was added." }
     else
       @activities = current_user.activities
-      flash.now[:error] = "There was an error creating new activity. Make sure that you already do not use the name of this activity."
+      flash.now[:error] = "There was an error creating the activity. " + @activity.errors.full_messages.to_sentence + "."
       render "index"
     end
   end
@@ -25,9 +25,11 @@ class ActivitiesController < ApplicationController
 
   def update
     if @activity.update(activity_params)
-      redirect_to activities_path, flash: { succes: "Activity was updated." }
+      flash[:success] = "Activity was updated."
+      redirect_to activities_path
     else
-      render "index", flash: { error: "There was an error updating an activity." }
+      flash.now[:error] = "There was an error updating the activity. " + @activity.errors.full_messages.to_sentence + "."
+      render "edit"
     end
   end
 
@@ -43,6 +45,6 @@ class ActivitiesController < ApplicationController
     end
 
     def load_user_activity
-      @activity = current_user.acvtivities.find(params:[:id])
+      @activity = current_user.activities.find(params[:id])
     end
 end
