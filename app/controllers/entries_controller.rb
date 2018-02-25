@@ -3,7 +3,9 @@ class EntriesController < ApplicationController
   before_action :convert_params_to_proper_format, only: [:create]
 
   def index
-    @entries= current_user.entries
+    @entries = current_user.entries
+    @date = params[:date].present? ? Date.strptime(params[:date], '%Y-%m-%d') : Date.current
+    @entries_by_date = @entries.where(date: @date)
   end
 
   def new
@@ -14,7 +16,7 @@ class EntriesController < ApplicationController
   def create
     @entry = Entry.new(entry_params)
     if @entry.save
-      redirect_to tracking_path, flash: { succes: "Entry was added." }
+      redirect_to tracking_path, flash: { success: "Entry was added." }
     else
       @activities = current_user.activities
       flash.now[:error] = "There was an error creating the entry."

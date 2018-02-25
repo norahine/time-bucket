@@ -29,5 +29,40 @@
       <% end %>
     </div>
   </div>
+
+  <div class="row">
+    <div class="col-md-12 col-centered">
+      <%= form_tag(reports_path, method: :get) do %>
+        <%= date_field_tag(:date, @date) %>
+        <%= submit_tag 'View' %>
+      <% end %>
+    </div>
+  </div>
+
+  <div class="row">
+    <div class="col-md-12 col-centered">
+      <h2>Entries by date <%= @date %></h2>
+      <ul class="list-unstyled">
+        <% @entries_by_date.each do |entry| %>
+          <li>
+            <div class="row">
+              <div class="col-md-2">
+                <%= entry.activity.name %>
+              </div>
+              <div class="col-md-2">
+                <%= entry.duration %>
+              </div>
+              <div class="col-md-2">
+                <%= entry.date %>
+              </div>
+               <div class="col-md-2">
+                <%= entry.note %>
+              </div>
+            </div>
+          </li>
+        <% end %>
+      </ul>
+    </div>
+  </div>
 </div>
 
