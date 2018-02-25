@@ -4,6 +4,10 @@ Rails.application.routes.draw do
 
   resources :activities, only: [:index, :create, :edit, :update, :destroy]
 
+  resources :entries, only: [:create, :edit, :update, :destroy]
+  get 'reports', to: 'entries#index'
+  get 'tracking', to: 'entries#new'
+
   devise_scope :user do
     authenticated :user do
       root "home#index", as: :authenticated_root
