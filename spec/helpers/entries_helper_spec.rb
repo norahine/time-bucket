@@ -11,5 +11,12 @@ require 'rails_helper'
 #   end
 # end
 RSpec.describe EntriesHelper, type: :helper do
-  pending "add some examples to (or delete) #{__FILE__}"
+  describe "seconds_to_time" do
+    it "converts seconds to time" do
+      expect(seconds_to_time(0)).to eq("00:00:00")
+      expect(seconds_to_time(35)).to eq("00:00:35")
+      expect(seconds_to_time(61)).to eq("00:01:01")
+      expect(seconds_to_time(3661)).to eq("01:01:01")
+    end
+  end
 end
