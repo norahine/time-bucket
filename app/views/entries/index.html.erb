@@ -1,2 +1,33 @@
-<h1>Entries#index</h1>
-<p>Find me in app/views/entries/index.html.erb</p>
+<div class="container">
+  <div class="row">
+    <div class="col-md-12 col-centered">
+      <h1>Entries</h1>
+
+      <% if current_user.entries.present? %>
+        <ul class="list-unstyled">
+          <% @entries.each do |entry| %>
+            <li>
+              <div class="row">
+                <div class="col-md-2">
+                  <%= entry.activity.name %>
+                </div>
+                <div class="col-md-2">
+                  <%= entry.duration %>
+                </div>
+                <div class="col-md-2">
+                  <%= entry.date %>
+                </div>
+                 <div class="col-md-2">
+                  <%= entry.note %>
+                </div>
+              </div>
+            </li>
+          <% end %>
+        </ul>
+      <% else %>
+        <p>Your list of entries is empty.</p>
+      <% end %>
+    </div>
+  </div>
+</div>
+
