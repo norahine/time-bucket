@@ -1,6 +1,7 @@
 class EntriesController < ApplicationController
   before_action :authenticate_user!
   before_action :convert_params_to_proper_format, only: [:create]
+  before_action :load_user_entries, only: [:edit, :update, :destroy]
 
   def index
     @entries = current_user.entries
@@ -28,9 +29,19 @@ class EntriesController < ApplicationController
   end
 
   def update
+    if @entry.update(entry_params)
+      flash[:success] = "Entry was updated."
+      redirect_to reports_path
+    else
+      flash.now[:error] = "There was an error updating the entry. " + @entry.errors.full_messages.to_sentence + "."
+      render "edit"
+    end
   end
 
   def destroy
+    @entry.destroy
+
+    redirect_to reports_path(:id)
   end
 
 
@@ -40,6 +51,12 @@ class EntriesController < ApplicationController
   end
 
   def convert_params_to_proper_format
-    params[:entry][:date] = Date.parse(params[:entry][:date]).strftime("%Y-%m-%d")
+    if params[:entry][:date].present?
+      params[:entry][:date] = Date.parse(params[:entry][:date]).strftime("%Y-%m-%d")
+    end
+  end
+
+  def load_user_entries
+    @entry = current_user.entries.find(params[:id])
   end
 end

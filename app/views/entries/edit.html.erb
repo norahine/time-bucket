@@ -1,2 +1,23 @@
-<h1>Entries#edit</h1>
-<p>Find me in app/views/entries/edit.html.erb</p>
+<div class="container">
+  <div class="row">
+    <div class="col-md-6">
+      <%= form_for @entry do |f| %>
+      <h3>Start timing</h3>
+
+        <div class="field">
+          <%= f.label :duration %><br />
+          <%= f.text_field :duration, class: "" %>
+        </div>
+        <div class="field">
+          <%= f.label :date %><br />
+          <%= f.text_field :date, class: "" %>
+        </div>
+        <div class="field">
+          <%= f.label :note %><br />
+          <%= f.text_field :note, class: "" %>
+        </div>
+        <%= f.submit "Update", class: "" %>
+      <% end %>
+    </div>
+  </div>
+</div>

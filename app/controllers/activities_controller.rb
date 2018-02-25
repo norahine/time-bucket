@@ -12,7 +12,7 @@ class ActivitiesController < ApplicationController
     @activity.user = current_user
 
     if @activity.save
-      redirect_to activities_path, flash: { succes: "Activity was added." }
+      redirect_to activities_path, flash: { success: "Activity was added." }
     else
       @activities = current_user.activities
       flash.now[:error] = "There was an error creating the activity. " + @activity.errors.full_messages.to_sentence + "."
