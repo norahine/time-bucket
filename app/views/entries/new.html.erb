@@ -7,7 +7,7 @@
           <div class="col-md-12">
             <%# http://api.rubyonrails.org/classes/ActionView/Helpers/FormOptionsHelper.html#method-i-select %>
             <%#= f.select(:activity_id, options_from_collection_for_select(@activities, :id, :name, @entry.activity_id), { include_blank: true }) %>
-            <%= f.select(:activity_id, @activities.map { |a| [a.name, a.id] }, { include_blank: true }) %>
+            <%= f.select(:activity_id, @activities.where(is_deleted: false).map { |a| [a.name, a.id] }, { include_blank: true }) %>
           </div>
         </div>
     </div>

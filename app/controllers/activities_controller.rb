@@ -34,7 +34,7 @@ class ActivitiesController < ApplicationController
   end
 
   def destroy
-    @activity.destroy
+    @activity.soft_delete
     redirect_to activities_path
   end
 

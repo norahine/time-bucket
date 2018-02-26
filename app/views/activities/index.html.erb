@@ -6,20 +6,22 @@
       <% if current_user.activities.present? %>
         <ul class="list-unstyled">
           <% @activities.each do |activity| %>
-            <li>
-              <div class="row">
-                <div class="col-md-8">
-                  <%= activity.name %>
+            <% if !activity.is_deleted? %>
+              <li>
+                <div class="row">
+                  <div class="col-md-8">
+                    <%= activity.name %>
+                  </div>
+                  <div class="col-md-1">
+                    <%= link_to "<i class=\"far fa-edit\"></i>".html_safe, edit_activity_path(activity) %>
+                  </div>
+                  <div class="col-md-1">
+                    <%= link_to "<i class=\"far fa-trash-alt\"></i>".html_safe, activity_path(activity),
+                        method: :delete, data: { confirm: "Are sure you want to delete this activity?" } %>
+                  </div>
                 </div>
-                <div class="col-md-1">
-                  <%= link_to "<i class=\"far fa-edit\"></i>".html_safe, edit_activity_path(activity) %>
-                </div>
-                <div class="col-md-1">
-                  <%= link_to "<i class=\"far fa-trash-alt\"></i>".html_safe, activity_path(activity),
-                      method: :delete, data: { confirm: "Are sure you want to delete this activity?" } %>
-                </div>
-              </div>
-            </li>
+              </li>
+            <% end %>
           <% end %>
         </ul>
       <% else %>
@@ -39,3 +41,4 @@
     </div>
   </div>
 </div>
+

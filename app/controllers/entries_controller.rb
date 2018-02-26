@@ -41,7 +41,7 @@ class EntriesController < ApplicationController
   def destroy
     @entry.destroy
 
-    redirect_to reports_path(:id)
+    redirect_to reports_path
   end
 
 
