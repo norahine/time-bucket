@@ -47,13 +47,16 @@ class EntriesController < ApplicationController
 
   private
   def entry_params
-    params.require(:entry).permit(:duration, :date, :note, :activity_id)
+    params.require(:entry).permit(:duration, :duration_hours, :duration_minutes, :duration_seconds, :date, :note, :activity_id)
   end
 
   def convert_params_to_proper_format
     if params[:entry][:date].present?
       params[:entry][:date] = Date.parse(params[:entry][:date]).strftime("%Y-%m-%d")
     end
+    hours_in_seconds = params[:entry][:duration_hours].to_i * 3600
+    minutes_in_seconds = params[:entry][:duration_minutes].to_i * 60
+    params[:entry][:duration] = hours_in_seconds + minutes_in_seconds + params[:entry][:duration_seconds].to_i
   end
 
   def load_user_entries
