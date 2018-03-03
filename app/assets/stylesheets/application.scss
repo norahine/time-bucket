@@ -27,8 +27,14 @@ body {
   }
 }
 
-select {
+select,
+input,
+textarea {
   font-weight: lighter;
+}
+
+label {
+  margin-bottom: 0 !important;
 }
 
 .btn.btn-secondary.btn-sm {
@@ -97,11 +103,33 @@ footer {
   margin-top: 30px;
 }
 
+.small-margin-bottom {
+  margin-bottom: 20px;
+}
+
 // TRACKING:
 .tracking {
   h1 {
     font-size: 44px;
     color: #1B7C7D;
     font-weight: lighter;
+  }
+
+  input,
+  textarea {
+    border-radius: 2px;
+    border: 0.5px solid #AEB0B2;
+    outline-color: #1B7C7D;
+  }
+  .additional-note-field {
+    width: 74%;
+  }
+  label {
+    color: #1B7C7D;
+  }
+
+  #entry_activity_id {
+    width: 74%;
+    border: none;
   }
 }
