@@ -1,3 +1,46 @@
 // Place all the styles related to the entries controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+
+// TIMER:
+input#duration-seconds,
+input#duration-minutes,
+input#duration-hours {
+  color: #1B7C7D;
+  font-size: 54px;
+  font-weight: lighter;
+  width: 68px;
+  border: none;
+}
+
+span.timer {
+  color: #1B7C7D;
+  font-size: 54px;
+  font-weight: lighter;
+}
+
+.fa-play-circle.fa-w-16 {
+  color: #1B7C7D;
+  font-size: 46px;
+  padding-bottom: 5px;
+}
+
+.fa-stop-circle.fa-w-16 {
+  color: #D95F41;
+  font-size: 46px;
+  padding-bottom: 5px;
+}
+
+#start-button,
+#stop-button {
+  background: none;
+  border: none;
+  outline: none;
+}
+
+// button:disabled svg.svg-inline--fa.fa-play-circle.fa-w-16,
+// button[disabled] svg.svg-inline--fa.fa-play-circle.fa-w-16,
+// button:disabled svg.svg-inline--fa.fa-stop-circle.fa-w-16,
+// button[disabled] svg.svg-inline--fa.fa-stop-circle.fa-w-16 {
+//   color: #DADADA;
+// }

@@ -1,3 +1,20 @@
-// Place all the styles related to the Activities controller here.
-// They will automatically be included in application.css.
-// You can use Sass (SCSS) here: http://sass-lang.com/
+.activity {
+  h1 {
+    font-size: 44px;
+    color: #1B7C7D;
+    font-weight: lighter;
+  }
+
+  input#activity_name {
+    border-radius: 2px;
+    border: 0.5px solid #AEB0B2;
+    outline-color: #1B7C7D;
+  }
+
+  .field_with_errors {
+    input#activity_name {
+      border-radius: 2px;
+      border: 0.5px solid #D95F41;
+    }
+  }
+}

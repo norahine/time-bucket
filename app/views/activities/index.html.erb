@@ -1,4 +1,4 @@
-<div class="container">
+<div class="container medium-margin-top activity">
   <div class="row">
     <div class="col-md-3 col-centered">
       <h1>Your activities</h1>
@@ -31,10 +31,10 @@
       <%= form_for @activity do |f| %>
         <div class="row">
           <div class="col-md-8">
-            <%= f.text_field :name, class: "" %>
+            <%= f.text_field :name%>
           </div>
           <div class="col-md-4">
-            <%= f.submit "Add", class: "" %>
+            <%= f.submit "Add", class: "btn btn-secondary btn-sm" %>
           </div>
         </div>
       <% end %>

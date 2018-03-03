@@ -1,7 +1,7 @@
-<div class="container">
-  <div class="row">
+<div class="container tracking">
+  <div class="row medium-margin-top">
     <div class="col-md-6">
-      <h3>Select an activity to track</h3>
+      <h1>Select an activity to track</h1>
       <%= form_for @entry do |f| %>
         <div class="row">
           <div class="col-md-12">
@@ -12,18 +12,18 @@
         </div>
     </div>
     <div class="col-md-6">
-      <h3>Start timing</h3>
+      <h1>Start timing</h1>
         <div id="duration-timer">
-
-          <button id="start-button" type="button">Start</button>
-          <button id="stop-button" type="button">Stop</button>
-
-          <div class="field">
-            <%= f.label :duration %><br />
+          <span class="field timer">
             <%= f.text_field :duration_hours, class: "", id: "duration-hours" %>
+            <span class="timer">:</span>
             <%= f.text_field :duration_minutes, class: "", id: "duration-minutes" %>
+            <span class="timer">:</span>
             <%= f.text_field :duration_seconds, class: "", id: "duration-seconds" %>
-          </div>
+          </span>
+
+          <button id="start-button" type="button"><i class="far fa-play-circle"></i></button>
+          <button id="stop-button" type="button"><i class="far fa-stop-circle"></i></button>
         </div>
         <div class="field">
           <%= f.label :date %><br />

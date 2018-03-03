@@ -49,8 +49,10 @@ document.addEventListener("DOMContentLoaded", function(event) {
 
       // disable add button, disable start button, enable stop button
       timerSubmissionButton.disabled = true;
-      startButton.disabled = true;
-      stopButton.disabled = false;
+      // startButton.disabled = true;
+      // stopButton.disabled = false;
+      startButton.classList.add("d-none");
+      stopButton.classList.remove("d-none");
     });
 
     stopButton.addEventListener("click", function(event) {
@@ -59,11 +61,14 @@ document.addEventListener("DOMContentLoaded", function(event) {
 
       // enable add button, disable stop button, enable start button
       timerSubmissionButton.disabled = false;
-      stopButton.disabled = true;
-      startButton.disabled = false;
+      // stopButton.disabled = true;
+      // startButton.disabled = false;
+      stopButton.classList.add("d-none");
+      startButton.classList.remove("d-none");
     });
 
     // disable stop button, when page is loaded
-    stopButton.disabled = true;
+    // stopButton.disabled = true;
+    stopButton.classList.add("d-none");
   }
 });

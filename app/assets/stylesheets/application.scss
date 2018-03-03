@@ -4,6 +4,7 @@
 
 @import "home";
 @import "activities";
+@import "entries";
 
 // GLOBAL:
 html {
@@ -17,11 +18,36 @@ body {
   padding-bottom: 6rem;
   min-height: 100%;
   font-family: "Helvetica Neue", "Helvetica", "Arial", sans-serif;
+  font-weight: lighter !important;
   a {
     color: black;
     &:hover {
       color:black;
     }
+  }
+}
+
+select {
+  font-weight: lighter;
+}
+
+.btn.btn-secondary.btn-sm {
+  font-weight: lighter;
+  padding: .12rem .56rem;
+}
+
+// DELETE & EDIT ICONS:
+.fa-trash-alt.fa-w-14 {
+  color: #D95F41;
+  &:hover {
+    color: darken(#D95F41, 15%);
+  }
+}
+
+.fa-edit.fa-w-18 {
+  color: #AEB0B2;
+  &:hover {
+    color: darken(#AEB0B2, 15%);
   }
 }
 
@@ -32,7 +58,7 @@ footer {
   bottom: 0;
   left: 0;
   padding: 1rem;
-  background-color: #f8f9fa;
+  background-color: #F8F9FA;
   font-size: 0.9em;
 
   a {
@@ -43,9 +69,21 @@ footer {
 
 // NAVBAR:
 .navbar {
+  a.navbar-brand {
+    // color: #1B7C7D;
+    font-size: 28px;
+    // &:hover {
+    //   color: darken(#1B7C7D, 15%);
+    // }
+  }
   a {
     padding-left: 10px;
     padding-right: 10px;
+    // color: #1B7C7D;
+
+    // &:hover {
+    //   color: darken(#1B7C7D, 15%);
+    // }
   }
 }
 
@@ -55,6 +93,15 @@ footer {
   margin: 0 auto;
 }
 
-// color: rgb(27, 124, 125);
-// color: color: rgb(217,95,65)
+.medium-margin-top {
+  margin-top: 30px;
+}
 
+// TRACKING:
+.tracking {
+  h1 {
+    font-size: 44px;
+    color: #1B7C7D;
+    font-weight: lighter;
+  }
+}
