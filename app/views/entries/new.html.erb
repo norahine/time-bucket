@@ -18,13 +18,11 @@
           <button id="start-button" type="button">Start</button>
           <button id="stop-button" type="button">Stop</button>
 
-          <div id="timer"></div>
-
           <div class="field">
             <%= f.label :duration %><br />
-            <%= f.text_field :duration_hours, class: "" %>
-            <%= f.text_field :duration_minutes, class: "" %>
-            <%= f.text_field :duration_seconds, class: "" %>
+            <%= f.text_field :duration_hours, class: "", id: "duration-hours" %>
+            <%= f.text_field :duration_minutes, class: "", id: "duration-minutes" %>
+            <%= f.text_field :duration_seconds, class: "", id: "duration-seconds" %>
           </div>
         </div>
         <div class="field">

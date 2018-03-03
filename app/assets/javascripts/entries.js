@@ -6,26 +6,25 @@ document.addEventListener("DOMContentLoaded", function(event) {
     var stopButton = document.getElementById("stop-button");
     var timerSubmissionButton = document.getElementById("duration-timer-submission");
 
-    var timerElement = document.getElementById("timer");
-    timerElement.innerHTML = "00:00:00";
+    var timerElementHours = document.getElementById("duration-hours");
+    var timerElementMinutes = document.getElementById("duration-minutes");
+    var timerElementSeconds = document.getElementById("duration-seconds");
+
+    timerElementHours.value = "00";
+    timerElementMinutes.value = "00";
+    timerElementSeconds.value = "00";
+
+
 
     var timer;
     var initialDate;
 
-    var secondsToTime = function(seconds) {
-      var hours = Math.floor(seconds / 3600);
-      var minutes = Math.floor(seconds / 60) % 60;
-      var seconds = seconds % 60;
-
-      var withLeadingZero = function(num) {
-        if (num < 10) {
-          return "0" + num.toString();
-        } else {
-          return num.toString();
-        }
-      };
-
-      return withLeadingZero(hours) + ":" + withLeadingZero(minutes) + ":" + withLeadingZero(seconds);
+    var withLeadingZero = function(num) {
+      if (num < 10) {
+        return "0" + num.toString();
+      } else {
+        return num.toString();
+      }
     };
 
     startButton.addEventListener("click", function(event) {
@@ -33,18 +32,19 @@ document.addEventListener("DOMContentLoaded", function(event) {
       console.log("start clicked");
       initialDate = new Date();
 
-      // timer = setInterval(function() {
-      //   var time = new Date();
-      //   timerElement.innerHTML = time.toLocaleTimeString();
-      // }, 1000);
-
       timer = setInterval(function() {
         // initialDate++;
-        var timePassedInSeconds = Math.floor((new Date() - initialDate) / 1000);
+        var timePassedInSeconds = (new Date() - initialDate) / 1000;
 
-        timerElement.innerHTML = secondsToTime(timePassedInSeconds);
+        var timePassedSeconds = Math.floor(timePassedInSeconds % 60);
+        var timePassedMinutes = Math.floor((timePassedInSeconds / 60) % 60);
+        var timePassedHours = Math.floor(timePassedInSeconds / 3600);
+
+        timerElementHours.value = withLeadingZero(timePassedHours);
+        timerElementMinutes.value = withLeadingZero(timePassedMinutes);
+        timerElementSeconds.value = withLeadingZero(timePassedSeconds);
+
       }, 1000);
-
 
       // disables form fields
       timerSubmissionButton.disabled = true;
