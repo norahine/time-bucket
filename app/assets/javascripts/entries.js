@@ -10,7 +10,7 @@ document.addEventListener("DOMContentLoaded", function(event) {
     timerElement.innerHTML = "00:00:00";
 
     var timer;
-    var timeMeasured = 0;
+    var initialDate;
 
     var secondsToTime = function(seconds) {
       var hours = Math.floor(seconds / 3600);
@@ -31,6 +31,7 @@ document.addEventListener("DOMContentLoaded", function(event) {
     startButton.addEventListener("click", function(event) {
       // starts timer
       console.log("start clicked");
+      initialDate = new Date();
 
       // timer = setInterval(function() {
       //   var time = new Date();
@@ -38,8 +39,10 @@ document.addEventListener("DOMContentLoaded", function(event) {
       // }, 1000);
 
       timer = setInterval(function() {
-        timeMeasured++;
-        timerElement.innerHTML = secondsToTime(timeMeasured);
+        // initialDate++;
+        var timePassedInSeconds = Math.floor((new Date() - initialDate) / 1000);
+
+        timerElement.innerHTML = secondsToTime(timePassedInSeconds);
       }, 1000);
 
 
