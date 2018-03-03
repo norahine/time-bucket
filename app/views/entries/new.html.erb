@@ -14,6 +14,12 @@
     <div class="col-md-6">
       <h3>Start timing</h3>
         <div id="duration-timer">
+
+          <button id="start-button" type="button">Start</button>
+          <button id="stop-button" type="button">Stop</button>
+
+          <div id="timer"></div>
+
           <div class="field">
             <%= f.label :duration %><br />
             <%= f.text_field :duration_hours, class: "" %>
@@ -29,7 +35,7 @@
           <%= f.label :note %><br />
           <%= f.text_field :note, class: "" %>
         </div>
-        <%= f.submit "Add", class: "" %>
+        <%= f.submit "Add", class: "", id: "duration-timer-submission" %>
       <% end %>
     </div>
   </div>

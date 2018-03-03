@@ -17,6 +17,12 @@ body {
   padding-bottom: 6rem;
   min-height: 100%;
   font-family: "Helvetica Neue", "Helvetica", "Arial", sans-serif;
+  a {
+    color: black;
+    &:hover {
+      color:black;
+    }
+  }
 }
 
 // FOOTER:
@@ -35,7 +41,7 @@ footer {
   }
 }
 
-// NAVBAR
+// NAVBAR:
 .navbar {
   a {
     padding-left: 10px;
@@ -48,3 +54,7 @@ footer {
   float: none;
   margin: 0 auto;
 }
+
+// color: rgb(27, 124, 125);
+// color: color: rgb(217,95,65)
+
