@@ -8,16 +8,40 @@ document.addEventListener("DOMContentLoaded", function(event) {
 
     var timerElement = document.getElementById("timer");
     timerElement.innerHTML = "00:00:00";
+
     var timer;
+    var timeMeasured = 0;
+
+    var secondsToTime = function(seconds) {
+      var hours = Math.floor(seconds / 3600);
+      var minutes = Math.floor(seconds / 60) % 60;
+      var seconds = seconds % 60;
+
+      var withLeadingZero = function(num) {
+        if (num < 10) {
+          return "0" + num.toString();
+        } else {
+          return num.toString();
+        }
+      };
+
+      return withLeadingZero(hours) + ":" + withLeadingZero(minutes) + ":" + withLeadingZero(seconds);
+    };
 
     startButton.addEventListener("click", function(event) {
       // starts timer
       console.log("start clicked");
 
+      // timer = setInterval(function() {
+      //   var time = new Date();
+      //   timerElement.innerHTML = time.toLocaleTimeString();
+      // }, 1000);
+
       timer = setInterval(function() {
-        var time = new Date();
-        timerElement.innerHTML = time.toLocaleTimeString();
+        timeMeasured++;
+        timerElement.innerHTML = secondsToTime(timeMeasured);
       }, 1000);
+
 
       // disables form fields
       timerSubmissionButton.disabled = true;
