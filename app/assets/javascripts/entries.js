@@ -10,12 +10,6 @@ document.addEventListener("DOMContentLoaded", function(event) {
     var timerElementMinutes = document.getElementById("duration-minutes");
     var timerElementSeconds = document.getElementById("duration-seconds");
 
-    timerElementHours.value = "00";
-    timerElementMinutes.value = "00";
-    timerElementSeconds.value = "00";
-
-
-
     var timer;
     var initialDate;
 
@@ -27,14 +21,22 @@ document.addEventListener("DOMContentLoaded", function(event) {
       }
     };
 
+    // make sure each field is formatted properly ("00")
+    timerElementHours.value = withLeadingZero(parseInt(timerElementHours.value));
+    timerElementMinutes.value = withLeadingZero(parseInt(timerElementMinutes.value));
+    timerElementSeconds.value = withLeadingZero(parseInt(timerElementSeconds.value));
+
     startButton.addEventListener("click", function(event) {
-      // starts timer
-      console.log("start clicked");
+      // start timer
       initialDate = new Date();
 
+      // get the current timer value from form and convert it to seconds
+      var previousTimeInSeconds = (parseInt(timerElementHours.value) * 3600) +
+                                  (parseInt(timerElementMinutes.value) * 60) +
+                                  parseInt(timerElementSeconds.value);
+
       timer = setInterval(function() {
-        // initialDate++;
-        var timePassedInSeconds = (new Date() - initialDate) / 1000;
+        var timePassedInSeconds = ((new Date() - initialDate) / 1000) + previousTimeInSeconds;
 
         var timePassedSeconds = Math.floor(timePassedInSeconds % 60);
         var timePassedMinutes = Math.floor((timePassedInSeconds / 60) % 60);
@@ -43,27 +45,22 @@ document.addEventListener("DOMContentLoaded", function(event) {
         timerElementHours.value = withLeadingZero(timePassedHours);
         timerElementMinutes.value = withLeadingZero(timePassedMinutes);
         timerElementSeconds.value = withLeadingZero(timePassedSeconds);
-
       }, 1000);
 
-      // disables form fields
+      // disable add button, disable start button, enable stop button
       timerSubmissionButton.disabled = true;
-
-      // disables this button, enable stop button
       startButton.disabled = true;
       stopButton.disabled = false;
     });
 
     stopButton.addEventListener("click", function(event) {
-      // stops timer
-      console.log("stop clicked");
+      // stop timer
       clearInterval(timer);
 
-      // enables form fields
-      // disables this button, enable start button
-      startButton.disabled = false;
-      stopButton.disabled = true;
+      // enable add button, disable stop button, enable start button
       timerSubmissionButton.disabled = false;
+      stopButton.disabled = true;
+      startButton.disabled = false;
     });
 
     // disable stop button, when page is loaded

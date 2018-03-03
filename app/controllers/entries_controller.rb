@@ -11,7 +11,7 @@ class EntriesController < ApplicationController
 
   def new
     @activities = current_user.activities
-    @entry = Entry.new
+    @entry = Entry.new(duration_hours: 0, duration_minutes: 0, duration_seconds: 0)
   end
 
   def create
