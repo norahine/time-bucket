@@ -27,6 +27,13 @@ body {
   }
 }
 
+// TODO: clean this up
+h1 {
+  font-size: 44px !important;;
+  color: #1B7C7D !important;;
+  font-weight: lighter !important;;
+}
+
 select,
 input,
 textarea {
@@ -40,7 +47,13 @@ label {
 .btn.btn-secondary.btn-sm {
   font-weight: lighter;
   padding: .12rem .56rem;
+  font-size: 18px;
+
+  &.smaller {
+    font-size: 14px;
+  }
 }
+
 
 // DELETE & EDIT ICONS:
 .fa-trash-alt.fa-w-14 {
@@ -76,20 +89,10 @@ footer {
 // NAVBAR:
 .navbar {
   a.navbar-brand {
-    // color: #1B7C7D;
-    font-size: 28px;
-    // &:hover {
-    //   color: darken(#1B7C7D, 15%);
-    // }
   }
   a {
     padding-left: 10px;
     padding-right: 10px;
-    // color: #1B7C7D;
-
-    // &:hover {
-    //   color: darken(#1B7C7D, 15%);
-    // }
   }
 }
 
@@ -131,5 +134,25 @@ footer {
   #entry_activity_id {
     width: 74%;
     border: none;
+    font-size: 20px;
   }
+}
+
+
+.profile-management {
+   h3 {
+    font-size: 26px;
+    color: #D95F41;
+    font-weight: lighter;
+   }
+
+  input {
+    width: 100%;
+    outline-color: #1B7C7D;
+  }
+}
+
+.label-secondary-info {
+  font-size: 13px;
+  font-style: normal;
 }

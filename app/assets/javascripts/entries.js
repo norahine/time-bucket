@@ -53,6 +53,10 @@ document.addEventListener("DOMContentLoaded", function(event) {
       // stopButton.disabled = false;
       startButton.classList.add("d-none");
       stopButton.classList.remove("d-none");
+      // disable editing time when timer goes
+      timerElementHours.disabled = true;
+      timerElementMinutes.disabled = true;
+      timerElementSeconds.disabled = true;
     });
 
     stopButton.addEventListener("click", function(event) {
@@ -65,6 +69,10 @@ document.addEventListener("DOMContentLoaded", function(event) {
       // startButton.disabled = false;
       stopButton.classList.add("d-none");
       startButton.classList.remove("d-none");
+      // enable editing time when timer stops
+      timerElementHours.disabled = false;
+      timerElementMinutes.disabled = false;
+      timerElementSeconds.disabled = false;
     });
 
     // disable stop button, when page is loaded

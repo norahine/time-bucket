@@ -1,8 +1,4 @@
-// Place all the styles related to the entries controller here.
-// They will automatically be included in application.css.
-// You can use Sass (SCSS) here: http://sass-lang.com/
-
-// TIMER:
+// DURATION TIMER:
 input#duration-seconds,
 input#duration-minutes,
 input#duration-hours {
@@ -19,16 +15,25 @@ span.timer {
   font-weight: lighter;
 }
 
+// START AND STOP BUTTONS
 .fa-play-circle.fa-w-16 {
   color: #1B7C7D;
   font-size: 46px;
   padding-bottom: 5px;
+  &:hover {
+    color: darken(#1B7C7D, 10%);
+    cursor: pointer;
+  }
 }
 
 .fa-stop-circle.fa-w-16 {
   color: #D95F41;
   font-size: 46px;
   padding-bottom: 5px;
+   &:hover {
+    color: darken(#D95F41, 15%);
+    cursor: pointer;
+  }
 }
 
 #start-button,
@@ -38,9 +43,14 @@ span.timer {
   outline: none;
 }
 
-// button:disabled svg.svg-inline--fa.fa-play-circle.fa-w-16,
-// button[disabled] svg.svg-inline--fa.fa-play-circle.fa-w-16,
-// button:disabled svg.svg-inline--fa.fa-stop-circle.fa-w-16,
-// button[disabled] svg.svg-inline--fa.fa-stop-circle.fa-w-16 {
-//   color: #DADADA;
-// }
+// SUBMIT DURATION
+#duration-timer-submission {
+  width: 74%;
+}
+
+input:disabled,
+input[disabled],
+input:disabled,
+input[disabled] {
+  cursor: not-allowed;
+}
