@@ -8,13 +8,16 @@ Rails.application.routes.draw do
   get 'reports', to: 'entries#index'
   get 'tracking', to: 'entries#new'
 
+  get 'main/about'
+  get 'main/faq'
+
   devise_scope :user do
     authenticated :user do
-      root "home#index", as: :authenticated_root
+      root 'home#index', as: :authenticated_root
     end
 
     unauthenticated do
-      root "devise/sessions#new", as: :unauthenticated_root
+      root 'devise/sessions#new', as: :unauthenticated_root
     end
   end
 end

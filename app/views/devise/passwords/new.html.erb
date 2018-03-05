@@ -1,19 +1,21 @@
-<div class="container">
+<div class="container medium-margin-top">
   <div class="row">
     <div class="col-sm-4 offset-sm-4">
 
-      <h2>Forgot your password?</h2>
+      <h1>Forgot your password?</h1>
+
+      <p>Enter the email address linked to your account. If you’re in our system, we’ll send you reset password instructions.</p>
 
       <%= form_for(resource, as: resource_name, url: password_path(resource_name), html: { method: :post }) do |f| %>
         <%= devise_error_messages! %>
 
         <div class="field">
           <%= f.label :email %><br />
-          <%= f.email_field :email, autofocus: true, autocomplete: "email" %>
+          <%= f.email_field :email, autofocus: true, autocomplete: "email", class: "small-margin-bottom full-width" %>
         </div>
 
         <div class="actions">
-          <%= f.submit "Send me reset password instructions" %>
+          <%= f.submit "Send me reset password instructions", class: "small-margin-bottom btn btn-secondary btn-sm full-width" %>
         </div>
       <% end %>
 
@@ -22,3 +24,4 @@
     </div>
   </div>
 </div>
+

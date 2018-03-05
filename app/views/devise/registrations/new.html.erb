@@ -1,31 +1,32 @@
-<div class="container">
+<div class="container medium-margin-top">
   <div class="row">
     <div class="col-sm-4 offset-sm-4">
-      <h2>Sign up</h2>
+      <h1>Sign up</h1>
 
       <%= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
         <%= devise_error_messages! %>
 
         <div class="field">
           <%= f.label :email %><br />
-          <%= f.email_field :email, autofocus: true, autocomplete: "email" %>
+          <%= f.email_field :email, autofocus: true, autocomplete: "email", class: "small-margin-bottom full-width" %>
         </div>
 
         <div class="field">
           <%= f.label :password %>
           <% if @minimum_password_length %>
-          <em>(<%= @minimum_password_length %> characters minimum)</em>
-          <% end %><br />
-          <%= f.password_field :password, autocomplete: "off" %>
+            <i class="label-secondary-info">(<%= @minimum_password_length %> characters minimum)</i>
+          <% end %>
+          <br />
+          <%= f.password_field :password, autocomplete: "off", class: "small-margin-bottom full-width" %>
         </div>
 
         <div class="field">
           <%= f.label :password_confirmation %><br />
-          <%= f.password_field :password_confirmation, autocomplete: "off" %>
+          <%= f.password_field :password_confirmation, autocomplete: "off", class: "small-margin-bottom full-width" %>
         </div>
 
         <div class="actions">
-          <%= f.submit "Sign up" %>
+          <%= f.submit "Sign up", class: "btn btn-secondary btn-sm full-width" %>
         </div>
       <% end %>
 
