@@ -11,22 +11,19 @@
   <div class="row">
     <div class="col-md-6 col-centered">
       <h1>Entries for <%= @date %></h1>
-      <ul class="list-unstyled">
+      <ul class="list-unstyled entry-list">
         <% if @entries_by_date.present? %>
           <% @entries_by_date.each do |entry| %>
             <li>
               <div class="row">
-                <div class="col-md-6">
+                <div class="col-md-8">
                   <%= entry.activity.name %>
-                  <%# TODO: jquery needed, perhaps think of different way %>
                   <% if entry.note.present? %>
-                    <i class="far fa-sticky-note" data-toggle="collapse" data-target="#entry_note"></i>
+                    <i class="far fa-sticky-note" data-toggle="collapse" data-target="#entry-note-<%=entry.id %>"></i>
+                    <div id="entry-note-<%=entry.id %>" class="collapse note">
+                      <%= entry.note %>
+                    </div>
                   <% end %>
-
-                  <div id="entry_note" class="collapse">
-                    <%= entry.note %>
-                  </div>
-
                 </div>
                 <div class="col-md-2">
                   <%= seconds_to_time(entry.duration) %>
