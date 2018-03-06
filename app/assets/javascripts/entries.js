@@ -90,7 +90,7 @@ document.addEventListener("DOMContentLoaded", function(event) {
 
     var year = date.getFullYear();
     var month = withLeadingZero(date.getMonth() + 1);
-    var day = date.getDate();
+    var day = withLeadingZero(date.getDate());
 
     date = year + "-" + month + "-" + day;
 
