@@ -1,3 +1,11 @@
+function withLeadingZero(num) {
+  if (num < 10) {
+    return "0" + num.toString();
+  } else {
+    return num.toString();
+  }
+}
+
 document.addEventListener("DOMContentLoaded", function(event) {
 
   // only run the code, when duration-timer element is present
@@ -12,14 +20,6 @@ document.addEventListener("DOMContentLoaded", function(event) {
 
     var timer;
     var initialDate;
-
-    var withLeadingZero = function(num) {
-      if (num < 10) {
-        return "0" + num.toString();
-      } else {
-        return num.toString();
-      }
-    };
 
     // make sure each field is formatted properly ("00")
     timerElementHours.value = withLeadingZero(parseInt(timerElementHours.value));
@@ -78,5 +78,23 @@ document.addEventListener("DOMContentLoaded", function(event) {
     // disable stop button, when page is loaded
     // stopButton.disabled = true;
     stopButton.classList.add("d-none");
-  }
+  };
+
+  // TODO:
+  $("#date-picker").datepicker({
+    format: "yyyy-mm-dd"
+  })
+  .on("changeDate", function(event){
+    var date = $("#date-picker").datepicker("getDate");
+    // debugger;
+
+    var year = date.getFullYear();
+    var month = withLeadingZero(date.getMonth() + 1);
+    var day = date.getDate();
+
+    date = year + "-" + month + "-" + day;
+
+    var dateField = document.getElementById("date-field");
+    dateField.value = date;
+  });
 });

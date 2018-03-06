@@ -14,4 +14,5 @@
 //= require jquery/dist/jquery
 //= require bootstrap-sprockets
 //= require activestorage
+//= require bootstrap-datepicker/js/bootstrap-datepicker
 //= require_tree .

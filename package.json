@@ -2,6 +2,7 @@
   "name": "time-bucket",
   "private": true,
   "dependencies": {
+    "bootstrap-datepicker": "^1.7.1",
     "jquery": "^3.3.1"
   }
 }

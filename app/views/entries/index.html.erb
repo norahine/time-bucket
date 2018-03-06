@@ -2,9 +2,16 @@
   <div class="row">
     <div class="col-md-6 col-centered">
       <%= form_tag(reports_path, method: :get) do %>
-        <%= date_field_tag(:date, @date) %>
+        <%#= date_field_tag(:date, @date) %>
+        <%= hidden_field_tag(:date, @date, id: "date-field") %>
         <%= submit_tag "View", class: "" %>
       <% end %>
+    </div>
+  </div>
+
+  <div class="row">
+    <div data-provide="datepicker-inline" data-date-today-highlight="true"
+   data-date-max-view-mode="days" class="col-md-6 col-centered" id='date-picker'>
     </div>
   </div>
 

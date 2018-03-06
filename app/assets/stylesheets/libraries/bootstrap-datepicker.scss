@@ -1,0 +1,65 @@
+.datepicker {
+  .datepicker-switch {
+    cursor: default;
+    &:hover {
+      background: none;
+    }
+  }
+  .next:hover,
+  .prev:hover {
+    background: none;
+  }
+  table {
+    border-collapse: separate;
+    border-spacing: 12px 2px;
+    margin: 0 auto;
+
+    thead tr th {
+      color: #1B7C7D;
+      font-weight: 500;
+      &.next,
+      &.prev {
+        font-weight: lighter;
+        &:hover {
+          font-weight: 600;
+        }
+      }
+    }
+  }
+}
+
+.datepicker-inline {
+  width: 100%;
+}
+
+.datepicker table tr td,
+.datepicker table tr th {
+  border-radius: 50%;
+  width: 34px;
+  height: 34px;
+}
+
+.datepicker table tr td.active:active,
+.datepicker table tr td.active.highlighted:active,
+.datepicker table tr td.active.active,
+.datepicker table tr td.active.highlighted.active,
+.datepicker table tr td.active,
+.datepicker table tr td.active.highlighted {
+  color: #fff;
+  background-color: #D95F41;
+}
+
+.datepicker table tr td.active:active:hover,
+.datepicker table tr td.active.highlighted:active:hover,
+.datepicker table tr td.active.active:hover,
+.datepicker table tr td.active.highlighted.active:hover,
+.datepicker table tr td.active:active:focus,
+.datepicker table tr td.active.highlighted:active:focus,
+.datepicker table tr td.active.active:focus,
+.datepicker table tr td.active.highlighted.active:focus,
+.datepicker table tr td.active:active.focus,
+.datepicker table tr td.active.highlighted:active.focus,
+.datepicker table tr td.active.active.focus,
+.datepicker table tr td.active.highlighted.active.focus {
+  background-color: #D95F41;
+}
