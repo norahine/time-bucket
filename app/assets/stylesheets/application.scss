@@ -9,7 +9,7 @@
 @import "entries";
 @import "contacts";
 
-// GLOBAL:
+// GLOBAL
 html {
   height: 100%;
   box-sizing: border-box;
@@ -31,11 +31,15 @@ body {
   }
 }
 
-// TODO: clean this up
 h1 {
   font-size: 44px !important;;
   color: #1B7C7D !important;;
   font-weight: lighter !important;;
+}
+
+input,
+textarea {
+  outline-color: #1B7C7D;
 }
 
 select,
@@ -58,7 +62,7 @@ label {
   }
 }
 
-// DELETE & EDIT ICONS:
+// DELETE, EDIT & NOTE ICONS
 .fa-trash-alt.fa-w-14 {
   color: #D95F41;
   &:hover {
@@ -75,7 +79,7 @@ label {
   }
 }
 
-// NAVBAR:
+// NAVBAR
 .navbar {
   a.navbar-brand {
     color: #D95F41;
@@ -95,7 +99,7 @@ label {
   }
 }
 
-// FOOTER:
+// FOOTER
 footer {
   position: absolute;
   right: 0;
@@ -116,29 +120,7 @@ footer {
   }
 }
 
-// CUSTOM CLASSES:
-.col-centered {
-  float: none;
-  margin: 0 auto;
-}
-
-.medium-margin-top {
-  margin-top: 30px;
-}
-
-.small-margin-bottom {
-  margin-bottom: 20px;
-}
-
-.full-width {
-  width: 100%;
-}
-
-.justify {
-  text-align: justify;
-}
-
-// TRACKING:
+// TRACKING
 .tracking {
   h1 {
     font-size: 44px;
@@ -166,7 +148,6 @@ footer {
   }
 }
 
-
 .profile-management {
    h3 {
     font-size: 26px;
@@ -178,17 +159,6 @@ footer {
     width: 100%;
   }
 }
-
-.label-secondary-info {
-  font-size: 13px;
-  font-style: normal;
-}
-
-input,
-textarea {
-  outline-color: #1B7C7D;
-}
-
 
 #date {
   border-radius: 2px;
@@ -205,6 +175,7 @@ textarea {
   }
 }
 
+// FAQ, ABOUT
 .faq h3,
 .about h3 {
   font-size: 26px;
@@ -212,6 +183,27 @@ textarea {
   font-weight: lighter;
 }
 
+// CUSTOM CLASSES
+.col-centered {
+  float: none;
+  margin: 0 auto;
+}
+
+.medium-margin-top {
+  margin-top: 30px;
+}
+
+.small-margin-bottom {
+  margin-bottom: 20px;
+}
+
+.full-width {
+  width: 100%;
+}
+
+.justify {
+  text-align: justify;
+}
 
 .underline {
   text-decoration: underline;
@@ -219,4 +211,9 @@ textarea {
   &:hover {
     text-decoration-color: #1B7C7D;
   }
+}
+
+.label-secondary-info {
+  font-size: 13px;
+  font-style: normal;
 }
