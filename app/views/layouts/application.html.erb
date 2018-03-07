@@ -20,26 +20,26 @@
         <ul class="navbar-nav">
           <% if user_signed_in? %>
             <li class="nav-item">
-              <%= link_to "Activities", activities_path %>
+              <%= link_to "Activities", activities_path, class: current_page?(activities_path) ? "active" : "" %>
             </li>
             <li class="nav-item">
-              <%= link_to "Tracking", tracking_path %>
+              <%= link_to "Tracking", tracking_path, class: current_page?(tracking_path) ? "active" : "" %>
             </li>
             <li class="nav-item">
-              <%= link_to "Reports", reports_path %>
+              <%= link_to "Reports", reports_path, class: current_page?(reports_path) ? "active" : "" %>
             </li>
             <li class="nav-item">
-              <%= link_to "Profile Management", edit_user_registration_path %>
+              <%= link_to "Profile Management", edit_user_registration_path, class: current_page?(edit_user_registration_path) ? "active" : "" %>
             </li>
             <li class="nav-item">
-              <%= link_to "Logout", destroy_user_session_path, method: :delete %>
+              <%= link_to "Logout", destroy_user_session_path, method: :delete, class: current_page?(destroy_user_session_path) ? "active" : "" %>
             </li>
           <% else %>
             <li class="nav-item text-righ">
-              <%= link_to "Login", new_user_session_path %>
+              <%= link_to "Login", new_user_session_path, class: current_page?(new_user_session_path) ? "active" : "" %>
             </li>
             <li class="nav-item text-righ pull-right">
-              <%= link_to "Sign up", new_user_registration_path %>
+              <%= link_to "Sign up", new_user_registration_path, class: current_page?(new_user_registration_path) ? "active" : "" %>
             </li>
           <% end %>
         </ul>
@@ -67,9 +67,9 @@
     <footer class="container-fluid">
       <div class="row">
         <div class="col-sm-5 offset-5">
-          <%= link_to "About", main_about_path %>
-          <%= link_to "Contact", new_contact_path %>
-          <%= link_to "FAQ", main_faq_path %>
+          <%= link_to "About", main_about_path, class: current_page?(main_about_path) ? "active" : "" %>
+          <%= link_to "Contact", new_contact_path, class: current_page?(new_contact_path) ? "active" : "" %>
+          <%= link_to "FAQ", main_faq_path, class: current_page?(main_faq_path) ? "active" : "" %>
         </div>
         <div class="col-sm-2 text-right">
           <span>&copy; Natalia Barańska, <%= Time.current.year %></span>

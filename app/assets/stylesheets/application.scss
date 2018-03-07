@@ -75,6 +75,26 @@ label {
   }
 }
 
+// NAVBAR:
+.navbar {
+  a.navbar-brand {
+    color: #D95F41;
+    font-size: 26px;
+    &:hover {
+      color: darken(#D95F41, 15%);
+    }
+  }
+  a {
+    padding-left: 10px;
+    padding-right: 10px;
+  }
+  a.active {
+    text-decoration: underline;
+    text-decoration-color: #1B7C7D;
+    cursor: default;
+  }
+}
+
 // FOOTER:
 footer {
   position: absolute;
@@ -88,21 +108,11 @@ footer {
   a {
     padding-left: 10px;
     padding-right: 10px;
-  }
-}
-
-// NAVBAR:
-.navbar {
-  a.navbar-brand {
-    color: #D95F41;
-    font-size: 26px;
-    &:hover {
-      color: darken(#D95F41, 15%);
+    &.active {
+      text-decoration: underline;
+      text-decoration-color: #1B7C7D;
+      cursor: default;
     }
-  }
-  a {
-    padding-left: 10px;
-    padding-right: 10px;
   }
 }
 
