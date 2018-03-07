@@ -7,10 +7,8 @@
 
   <div class="row">
     <div class="col-md-6 col-centered">
-      <%= form_tag(reports_path, method: :get) do %>
-        <%#= date_field_tag(:date, @date) %>
+      <%= form_tag(reports_path, method: :get, id: "date-form") do %>
         <%= hidden_field_tag(:date, @date, id: "date-field") %>
-        <%= submit_tag "View" %>
       <% end %>
     </div>
   </div>

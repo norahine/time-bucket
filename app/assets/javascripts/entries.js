@@ -73,18 +73,34 @@ document.addEventListener("DOMContentLoaded", function(event) {
     stopButton.classList.add("d-none");
   };
 
+  var shouldSubmit = false;
+
   $("#date-picker").datepicker({
     format: "yyyy-mm-dd"
   })
   .on("changeDate", function(event){
     var date = $("#date-picker").datepicker("getDate");
+    // Format date properly for server
     var year = date.getFullYear();
     var month = withLeadingZero(date.getMonth() + 1);
     var day = withLeadingZero(date.getDate());
 
     date = year + "-" + month + "-" + day;
 
+    // Update form field with value selected from datepicker
     var dateField = document.getElementById("date-field");
     dateField.value = date;
+
+    // Prevent form from sumbitting on load that is causing a loop of sumbissions
+    if (shouldSubmit === true) {
+      document.getElementById("date-form").submit();
+    } else {
+      shouldSubmit = true;
+    }
   });
+
+  // Set date from server as the current date in calendar
+  var dateString = document.getElementById("date-field").value;
+  var selectedDate = new Date(dateString);
+  $("#date-picker").datepicker('setDate', selectedDate);
 });
