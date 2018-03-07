@@ -2,8 +2,8 @@
   <div class="row">
     <div class="col-sm-4 offset-sm-4">
       <h1>Contact form</h1>
-      <div class="form">
-
+      <p class="justify">Fill out the fields below and I'll get back to you shortly!</p>
+      <div class="form contact-form">
         <% if @contact.errors.any? %>
           <div class="small-margin-bottom alert alert-danger">There was an issue sending your message: <%= @contact.errors.full_messages.map(&:inspect).join('. ') %>.</div>
         <% end %>
@@ -11,17 +11,17 @@
         <%= form_for @contact do |f| %>
           <div class="field">
             <%= f.label :name %><br />
-            <%= f.text_field :name, class: "small-margin-bottom" %>
+            <%= f.text_field :name, class: "small-margin-bottom", placeholder: "Your name" %>
           </div>
 
           <div class="field">
             <%= f.label :email %><br />
-            <%= f.email_field :email, class: "small-margin-bottom" %>
+            <%= f.email_field :email, class: "small-margin-bottom", placeholder:"email@example.com" %>
           </div>
 
           <div class="field">
             <%= f.label :message %><br />
-            <%= f.text_area :message, size: "40x5", class: "small-margin-bottom" %>
+            <%= f.text_area :message, size: "40x5", class: "small-margin-bottom", placeholder: "Hi Natalia..." %>
           </div>
 
           <%= f.submit "Submit", class: "btn btn-secondary btn-sm" %>

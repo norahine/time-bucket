@@ -35,8 +35,11 @@
               <%= link_to "Logout", destroy_user_session_path, method: :delete %>
             </li>
           <% else %>
-            <li class="nav-item">
+            <li class="nav-item text-righ">
               <%= link_to "Login", new_user_session_path %>
+            </li>
+            <li class="nav-item text-righ pull-right">
+              <%= link_to "Sign up", new_user_registration_path %>
             </li>
           <% end %>
         </ul>
@@ -48,13 +51,11 @@
         <div class="col-md-6 col-centered">
           <% [:success, :alert, :notice, :error].each do |type| %>
             <% if flash[type].present? %>
-
               <div class="alert <%= bootstrap_class_for_alert(type) %> alert-dismissible fade show" role="alert"><%= flash[type] %>
                 <button type="button" class="close" data-dismiss="alert" aria-label="Close">
                   <span aria-hidden="true">&times;</span>
                 </button>
               </div>
-
             <% end %>
           <% end %>
         </div>
