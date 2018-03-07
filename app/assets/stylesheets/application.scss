@@ -199,3 +199,12 @@ input {
   color: #1B7C7D;
   font-weight: lighter;
 }
+
+
+.underline {
+  text-decoration: underline;
+  text-decoration-color: #D95F41;
+  &:hover {
+    text-decoration-color: #1B7C7D;
+  }
+}

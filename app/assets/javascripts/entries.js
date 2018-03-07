@@ -47,10 +47,8 @@ document.addEventListener("DOMContentLoaded", function(event) {
         timerElementSeconds.value = withLeadingZero(timePassedSeconds);
       }, 1000);
 
-      // disable add button, disable start button, enable stop button
       timerSubmissionButton.disabled = true;
-      // startButton.disabled = true;
-      // stopButton.disabled = false;
+
       startButton.classList.add("d-none");
       stopButton.classList.remove("d-none");
       // disable editing time when timer goes
@@ -63,31 +61,23 @@ document.addEventListener("DOMContentLoaded", function(event) {
       // stop timer
       clearInterval(timer);
 
-      // enable add button, disable stop button, enable start button
       timerSubmissionButton.disabled = false;
-      // stopButton.disabled = true;
-      // startButton.disabled = false;
+
       stopButton.classList.add("d-none");
       startButton.classList.remove("d-none");
-      // enable editing time when timer stops
+
       timerElementHours.disabled = false;
       timerElementMinutes.disabled = false;
       timerElementSeconds.disabled = false;
     });
-
-    // disable stop button, when page is loaded
-    // stopButton.disabled = true;
     stopButton.classList.add("d-none");
   };
 
-  // TODO:
   $("#date-picker").datepicker({
     format: "yyyy-mm-dd"
   })
   .on("changeDate", function(event){
     var date = $("#date-picker").datepicker("getDate");
-    // debugger;
-
     var year = date.getFullYear();
     var month = withLeadingZero(date.getMonth() + 1);
     var day = withLeadingZero(date.getDate());
