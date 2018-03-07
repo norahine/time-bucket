@@ -11,6 +11,8 @@ Rails.application.routes.draw do
   get 'main/about'
   get 'main/faq'
 
+  resources :contacts, only: [:new, :create]
+
   devise_scope :user do
     authenticated :user do
       root 'home#index', as: :authenticated_root
