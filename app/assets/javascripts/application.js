@@ -12,6 +12,7 @@
 //
 //= require rails-ujs
 //= require jquery/dist/jquery
+//= require cleave.js/dist/cleave
 //= require bootstrap-sprockets
 //= require activestorage
 //= require bootstrap-datepicker/js/bootstrap-datepicker

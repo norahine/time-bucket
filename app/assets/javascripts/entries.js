@@ -71,6 +71,25 @@ document.addEventListener("DOMContentLoaded", function(event) {
       timerElementSeconds.disabled = false;
     });
     stopButton.classList.add("d-none");
+
+    // allow only positive numbers when editing timer
+    var cleave = new Cleave('#duration-hours', {
+      numeral: true,
+      stripLeadingZeroes: false,
+      numeralPositiveOnly: true
+    });
+
+    var cleave = new Cleave('#duration-minutes', {
+      numeral: true,
+      stripLeadingZeroes: false,
+      numeralPositiveOnly: true
+    });
+
+    var cleave = new Cleave('#duration-seconds', {
+      numeral: true,
+      stripLeadingZeroes: false,
+      numeralPositiveOnly: true
+    });
   };
 
   // only run the code, when date-picker element is present

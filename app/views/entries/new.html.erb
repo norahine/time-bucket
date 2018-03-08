@@ -14,12 +14,11 @@
         <h1>Start timing</h1>
         <div id="duration-timer">
           <span class="field timer">
-            <%# TODO: allow to enter only numbers, temporary solution with the pattern %>
-            <%= f.text_field :duration_hours, class: "", id: "duration-hours", maxlength: 2, pattern: '[0-9]{2}'  %>
+            <%= f.text_field :duration_hours, id: "duration-hours", maxlength: 2 %>
             <span class="timer">:</span>
-            <%= f.text_field :duration_minutes, class: "", id: "duration-minutes", maxlength: 2, pattern: '[0-9]{2}' %>
+            <%= f.text_field :duration_minutes, id: "duration-minutes", maxlength: 2 %>
             <span class="timer">:</span>
-            <%= f.text_field :duration_seconds, class: "", id: "duration-seconds", maxlength: 2, pattern: '[0-9]{2}' %>
+            <%= f.text_field :duration_seconds, id: "duration-seconds", maxlength: 2 %>
           </span>
 
           <button id="start-button" type="button"><i class="far fa-play-circle"></i></button>
