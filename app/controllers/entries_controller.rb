@@ -34,7 +34,7 @@ class EntriesController < ApplicationController
   def update
     if @entry.update(entry_params)
       flash[:success] = "Entry was updated."
-      redirect_to reports_path
+      redirect_to reports_path(date: @entry.date)
     else
       flash.now[:error] = "There was an error updating the entry. " + @entry.errors.full_messages.to_sentence + "."
       render "edit"
