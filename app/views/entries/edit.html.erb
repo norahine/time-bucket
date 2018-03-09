@@ -1,23 +1,32 @@
-<div class="container">
+<div class="container medium-margin-top">
   <div class="row">
-    <div class="col-md-6">
+    <div class="col-md-4 offset-md-4">
+      <h2>Editing</h2>
+      <h2 class="underline"><%= @entry.activity.name %></h2>
+
       <%= form_for @entry do |f| %>
-      <h3>Start timing</h3>
+
+        <span class="field timer">
+          <%= f.text_field :duration_hours, id: "duration-hours", maxlength: 2 %>
+          <span class="timer">:</span>
+          <%= f.text_field :duration_minutes, id: "duration-minutes", maxlength: 2 %>
+          <span class="timer">:</span>
+          <%= f.text_field :duration_seconds, id: "duration-seconds", maxlength: 2 %>
+        </span>
 
         <div class="field">
-          <%= f.label :duration %><br />
-          <%= f.text_field :duration, class: "" %>
-        </div>
-        <div class="field">
           <%= f.label :date %><br />
-          <%= f.text_field :date, class: "" %>
+          <%= f.text_field :date, class: "small-margin-bottom full-width" %>
         </div>
+
         <div class="field">
           <%= f.label :note %><br />
-          <%= f.text_field :note, class: "" %>
+          <%= f.text_area :note, class: "small-margin-bottom full-width additional-note-field" %>
         </div>
-        <%= f.submit "Update", class: "" %>
+        <%= f.submit "Update", class: "btn btn-secondary btn-sm full-width" %>
       <% end %>
     </div>
   </div>
 </div>
+
+

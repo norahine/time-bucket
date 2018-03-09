@@ -1,7 +1,13 @@
-<%= form_for @activity do |f| %>
-  <div class="field">
-    <%= f.text_field :name, class: "" %>
+<div class="container medium-margin-top activity">
+  <div class="row">
+    <div class="col-md-4 col-centered">
+      <h2>Update activity</h2>
+      <%= form_for @activity do |f| %>
+        <div class="field medium-margin-top ">
+          <%= f.text_field :name, class: "small-margin-bottom full-width" %>
+        </div>
+        <%= f.submit "Update", class: "btn btn-secondary btn-sm full-width" %>
+      <% end %>
+    </div>
   </div>
-
-  <%= f.submit "Update", class: "" %>
-<% end %>
+</div>

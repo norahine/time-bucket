@@ -1,6 +1,6 @@
 class EntriesController < ApplicationController
   before_action :authenticate_user!
-  before_action :convert_params_to_proper_format, only: [:create]
+  before_action :convert_params_to_proper_format, only: [:create, :update]
   before_action :load_user_entries, only: [:edit, :update, :destroy]
 
   def index
@@ -26,6 +26,9 @@ class EntriesController < ApplicationController
   end
 
   def edit
+    @entry.duration_hours = "%02d" % (@entry.duration / 3600)
+    @entry.duration_minutes = "%02d" % (@entry.duration / 60 % 60)
+    @entry.duration_seconds = "%02d" % (@entry.duration % 60)
   end
 
   def update
