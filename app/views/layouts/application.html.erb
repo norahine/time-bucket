@@ -51,7 +51,7 @@
 
     <div class="container medium-margin-top">
       <div class="row">
-        <div class="col-md-6 col-centered">
+        <div class="col-md-4 col-centered">
           <% [:success, :alert, :notice, :error].each do |type| %>
             <% if flash[type].present? %>
               <div class="alert <%= bootstrap_class_for_alert(type) %> alert-dismissible fade show" role="alert"><%= flash[type] %>

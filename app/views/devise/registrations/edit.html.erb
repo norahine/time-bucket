@@ -4,8 +4,9 @@
       <h1>Edit your profile</h1>
 
       <%= form_for(resource, as: resource_name, url: registration_path(resource_name), html: { method: :put }) do |f| %>
-
-        <%= devise_error_messages! %>
+        <% if resource.errors.any? %>
+          <div class="small-margin-bottom alert alert-danger">There was an issue updating your profile: <%= resource.errors.full_messages.map(&:inspect).join('. ') %>.</div>
+        <% end %>
 
         <div class="field">
           <%= f.label :email %><br />
