@@ -10,7 +10,7 @@
     </div>
 
     <div class="col-md-7">
-      <h1>Entries for <%= @date %></h1>
+      <h1 class="small-margin-bottom">Entries for <%= @date %></h1>
       <ul class="list-unstyled entry-list">
         <% if @entries_by_date.present? %>
           <% @entries_by_date.each do |entry| %>
@@ -40,8 +40,11 @@
             <hr />
           <% end %>
           <div class="row">
-            <div class="col-md-4 offset-md-8">
-              <%# TODO: daily sum %>
+            <div class="col-md-8">
+              Total time:
+            </div>
+            <div class="col-md-4">
+              <%= seconds_to_time(@daily_sum) %>
             </div>
           </div>
         <% else %>

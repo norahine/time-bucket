@@ -7,6 +7,7 @@ class EntriesController < ApplicationController
     @entries = current_user.entries
     @date = params[:date].present? ? Date.strptime(params[:date], '%Y-%m-%d') : Date.current
     @entries_by_date = @entries.where(date: @date)
+    @daily_sum = @entries_by_date.sum(:duration)
   end
 
   def new
@@ -44,7 +45,7 @@ class EntriesController < ApplicationController
   def destroy
     @entry.destroy
 
-    redirect_to reports_path
+    redirect_to reports_path(date: @entry.date)
   end
 
 
