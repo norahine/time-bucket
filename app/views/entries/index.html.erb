@@ -3,9 +3,7 @@
 <div class="container medium-margin-top">
   <div class="row">
     <div class="col-md-5">
-      <div data-provide="datepicker-inline"
-     data-date-max-view-mode="days" id='date-picker'>
-      </div>
+      <div data-provide="datepicker-inline" data-date-max-view-mode="days" id="date-picker"></div>
       <%= form_tag(reports_path, method: :get, id: "date-form") do %>
         <%= hidden_field_tag(:date, @date, id: "date-field") %>
       <% end %>

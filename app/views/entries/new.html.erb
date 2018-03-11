@@ -1,15 +1,13 @@
-<div class="container tracking">
-  <div class="row medium-margin-top">
-    <div class="col-md-5 col-centered text-center">
+<div class="container tracking medium-margin-top">
+  <div class="row">
+    <div class="col-md-4 col-centered">
       <h1>Select an activity</h1>
       <%= form_for @entry do |f| %>
-        <div class="row">
-          <div class="col-md-12 small-margin-bottom">
-            <%# http://api.rubyonrails.org/classes/ActionView/Helpers/FormOptionsHelper.html#method-i-select %>
-            <%#= f.select(:activity_id, options_from_collection_for_select(@activities, :id, :name, @entry.activity_id), { include_blank: true }) %>
-            <%= f.select(:activity_id, @activities.where(is_deleted: false).map { |a| [a.name, a.id] }, { include_blank: true }) %>
-          </div>
-        </div>
+
+        <%# http://api.rubyonrails.org/classes/ActionView/Helpers/FormOptionsHelper.html#method-i-select %>
+        <%#= f.select(:activity_id, options_from_collection_for_select(@activities, :id, :name, @entry.activity_id), { include_blank: true }) %>
+        <%= f.select(:activity_id, @activities.where(is_deleted: false).map { |a| [a.name, a.id] }, { include_blank: true }, class: "small-margin-bottom") %>
+
 
         <h1>Start timing</h1>
         <div id="duration-timer">
@@ -26,7 +24,7 @@
         </div>
         <div class="field">
           <%= f.label :date, "Pick a date" %><br />
-          <%= f.date_field :date, class: "small-margin-bottom" %>
+          <%= f.date_field :date, class: "small-margin-bottom", data: { "provide" => "datepicker", "date-max-view-mode" => "days" }, id: "date-picker-autoclose" %>
         </div>
         <div class="field">
           <%= f.label :note, "Add a note (optional)" %><br />

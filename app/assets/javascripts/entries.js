@@ -124,5 +124,10 @@ document.addEventListener("DOMContentLoaded", function(event) {
     var dateString = document.getElementById("date-field").value;
     var selectedDate = new Date(dateString);
     $("#date-picker").datepicker('setDate', selectedDate);
-  }
+  };
+
+  $("#date-picker-autoclose").datepicker({
+    format: "yyyy-mm-dd",
+    autoclose: true
+  })
 });
