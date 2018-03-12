@@ -8,7 +8,6 @@
         <%#= f.select(:activity_id, options_from_collection_for_select(@activities, :id, :name, @entry.activity_id), { include_blank: true }) %>
         <%= f.select(:activity_id, @activities.where(is_deleted: false).map { |a| [a.name, a.id] }, { include_blank: true }, class: "small-margin-bottom") %>
 
-
         <h1>Start timing</h1>
         <div id="duration-timer">
           <span class="field timer">
@@ -24,7 +23,7 @@
         </div>
         <div class="field">
           <%= f.label :date, "Pick a date" %><br />
-          <%= f.date_field :date, class: "small-margin-bottom", data: { "provide" => "datepicker", "date-max-view-mode" => "days" }, id: "date-picker-autoclose" %>
+          <%= f.text_field :date, class: "small-margin-bottom", data: { "provide" => "datepicker", "date-max-view-mode" => "days" }, id: "date-picker-autoclose" %>
         </div>
         <div class="field">
           <%= f.label :note, "Add a note (optional)" %><br />
