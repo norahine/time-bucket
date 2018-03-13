@@ -59,3 +59,31 @@ input[disabled] {
   font-size: 14px;
   color: #AEB0B2;
 }
+
+// TRACKING
+.tracking {
+  h1 {
+    font-size: 44px;
+    color: #1B7C7D;
+    font-weight: lighter;
+  }
+
+  input,
+  textarea {
+    border-radius: 2px;
+    border: 0.5px solid #AEB0B2;
+    outline-color: #1B7C7D;
+  }
+  .additional-note-field {
+    width: 100%;
+  }
+  label {
+    color: #1B7C7D;
+  }
+
+  #entry_activity_id {
+    width: 100%;
+    border: none;
+    font-size: 20px;
+  }
+}

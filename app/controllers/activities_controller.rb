@@ -14,8 +14,8 @@ class ActivitiesController < ApplicationController
     if @activity.save
       redirect_to activities_path, flash: { success: "Activity was added." }
     else
+      flash.now[:error] = "There was an error creating the activity. #{@activity.errors.full_messages.to_sentence}."
       @activities = current_user.activities
-      flash.now[:error] = "There was an error creating the activity. " + @activity.errors.full_messages.to_sentence + "."
       render "index"
     end
   end
@@ -28,14 +28,19 @@ class ActivitiesController < ApplicationController
       flash[:success] = "Activity was updated."
       redirect_to activities_path
     else
-      flash.now[:error] = "There was an error updating the activity. " + @activity.errors.full_messages.to_sentence + "."
+      flash.now[:error] = "There was an error updating the activity. #{@activity.errors.full_messages.to_sentence}."
       render "edit"
     end
   end
 
   def destroy
-    @activity.soft_delete
-    redirect_to activities_path
+    if
+      @activity.soft_delete
+      redirect_to activities_path
+    else
+      flash.now[:error] = "There was an error deleting the activity."
+      redirect_to activities_path
+    end
   end
 
 

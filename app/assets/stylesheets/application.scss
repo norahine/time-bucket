@@ -4,10 +4,10 @@
 @import "bootstrap-datepicker/dist/css/bootstrap-datepicker3";
 @import "libraries/bootstrap-datepicker";
 
-@import "home";
 @import "activities";
 @import "entries";
 @import "contacts";
+@import "users";
 
 // GLOBAL
 html {
@@ -41,6 +41,10 @@ h2 {
   font-size: 34px !important;
   color: #1B7C7D !important;
   font-weight: lighter !important;
+}
+
+h3 {
+  font-weight: 400 !important;
 }
 
 input,
@@ -123,61 +127,6 @@ footer {
       text-decoration-color: #1B7C7D;
       cursor: default;
     }
-  }
-}
-
-// TRACKING
-.tracking {
-  h1 {
-    font-size: 44px;
-    color: #1B7C7D;
-    font-weight: lighter;
-  }
-
-  input,
-  textarea {
-    border-radius: 2px;
-    border: 0.5px solid #AEB0B2;
-    outline-color: #1B7C7D;
-  }
-  .additional-note-field {
-    width: 100%;
-  }
-  label {
-    color: #1B7C7D;
-  }
-
-  #entry_activity_id {
-    width: 100%;
-    border: none;
-    font-size: 20px;
-  }
-}
-
-.profile-management {
-   h3 {
-    font-size: 26px;
-    color: #D95F41;
-    font-weight: lighter;
-   }
-
-  input {
-    width: 100%;
-  }
-}
-
-#date {
-  border-radius: 2px;
-  border: 0.5px solid #AEB0B2;
-  outline-color: #1B7C7D;
-}
-
-// DEVISE ERRORS
-#error_explanation {
-  h2 {
-    font-weight: lighter;
-    font-size: 1.1rem;
-    color: #D95F41;
   }
 }
 

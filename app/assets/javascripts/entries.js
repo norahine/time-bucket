@@ -8,6 +8,10 @@ function withLeadingZero(num) {
 
 document.addEventListener("DOMContentLoaded", function(event) {
 
+  /*
+    Entries#new view
+  */
+
   // only run the code, when duration-timer element is present
   if (document.getElementById("duration-timer") != null) {
     var startButton = document.getElementById("start-button");
@@ -92,6 +96,10 @@ document.addEventListener("DOMContentLoaded", function(event) {
     });
   };
 
+  /*
+    Entries#index view
+  */
+
   // only run the code, when date-picker element is present
   if (document.getElementById("date-picker") != null) {
     var shouldSubmit = false;
@@ -125,6 +133,10 @@ document.addEventListener("DOMContentLoaded", function(event) {
     var selectedDate = new Date(dateString);
     $("#date-picker").datepicker('setDate', selectedDate);
   };
+
+  /*
+    Entries#new view
+  */
 
   $("#date-picker-autoclose").datepicker({
     format: "yyyy-mm-dd",
