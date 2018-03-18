@@ -7,7 +7,7 @@ It is simple. Create an account. Enter a name of an activity you wish to track, 
 
 ![Time entry screen](https://raw.githubusercontent.com/norahine/time-bucket/master/public/github_images/tracking_screenshot.png)
 
-All you activities will be added to a calendar and you can see them in the "Reports" section of the app.
+All your activities will be added to a calendar and you can see them in the "Reports" section of the app.
 
 
 ![Reports screen](https://raw.githubusercontent.com/norahine/time-bucket/master/public/github_images/reports_screenshot.png)
